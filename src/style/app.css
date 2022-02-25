@@ -1,0 +1,46 @@
+.app {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  padding: 20px;
+}
+
+header {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  line-height: 70px;
+  text-underline-offset: 10px;
+}
+
+footer {
+  background: var(--secondry-bg);
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--primary-text);
+}
+
+footer p {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+footer img[alt="icon"] {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+}

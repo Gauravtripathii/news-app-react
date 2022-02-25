@@ -4,6 +4,9 @@ import NewsCard from "./components/NewsCard";
 import "./style/app.css";
 import "./style/news_card.css";
 
+import linkedin from "./media/linkedin.png";
+import github from "./media/github.png";
+
 function App() {
   const [news, setNews] = useState([]);
 
@@ -21,7 +24,9 @@ function App() {
 
   return (
     <div className="app">
-      {/* {console.log(news)} */}
+      <header>
+        <h1>Top news of the day</h1>
+      </header>
 
       {news.map((news, i) => (
         <NewsCard
@@ -30,6 +35,20 @@ function App() {
           image={news.urlToImage}
         />
       ))}
+
+      <footer>
+        <p>
+        <img src={linkedin} alt="icon" />
+          <a href="https://github.com/Gauravtripathii">Gauravtripathii</a>
+        </p>
+
+        <p>
+          <img src={github} alt="icon" />
+          <a href="https://www.linkedin.com/in/gaurav-kumar-tripathii/">
+            Gauravtripathii
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
