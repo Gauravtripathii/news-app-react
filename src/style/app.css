@@ -44,3 +44,19 @@ footer img[alt="icon"] {
   background: white;
   border-radius: 50%;
 }
+
+@media only screen and (min-width: 900px) {
+  header {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+  }
+
+  .app > div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 100px;
+  }
+}

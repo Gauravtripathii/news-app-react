@@ -27,18 +27,19 @@ function App() {
       <header>
         <h1>Top news of the day</h1>
       </header>
-
-      {news.map((news, i) => (
-        <NewsCard
-          title={news.title}
-          description={news.description}
-          image={news.urlToImage}
-        />
-      ))}
+      <div>
+        {news.map((news, i) => (
+          <NewsCard
+            title={news.title}
+            description={news.description}
+            image={news.urlToImage}
+          />
+        ))}
+      </div>
 
       <footer>
         <p>
-        <img src={linkedin} alt="icon" />
+          <img src={linkedin} alt="icon" />
           <a href="https://github.com/Gauravtripathii">Gauravtripathii</a>
         </p>
 
