@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import NewsCard from "./components/NewsCard";
+
+import "./style/app.css";
+import "./style/news_card.css";
 
 function App() {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    getData();
+
+    async function getData() {
+      const response = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=8758a5728d15478b951b5448b146a13e"
+      );
+      const data = await response.json();
+      setNews(data["articles"]); //change the index for all the other news
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {/* {console.log(news)} */}
+
+      {news.map((news, i) => (
+        <NewsCard
+          title={news.title}
+          description={news.description}
+          image={news.urlToImage}
+        />
+      ))}
     </div>
   );
 }
